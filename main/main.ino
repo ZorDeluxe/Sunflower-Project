@@ -22,18 +22,21 @@ void loop() {
   soilMoisturePercentage = readSoilSensor();
 
   // print out the values you read:
-  Serial.printf("Soil Moisture = %d\n", soilMoisturePercentage);
+  Serial.printf("Soil Moisture Percentage= %f\n", soilMoisturePercentage);
   
   delay(500);  // delay in between reads for clear read from serial
 }
 
-
-
-float readSoilSensor() {
+// ***************************************
+// Reads the soil moisture in percentage
+// ***************************************
+float readSoilSensor() 
+{
   int analogReading;
   const int soilSensorPin = A0;
 
+  // Calculate the soil readings
   analogReading = analogRead(soilSensorPin);
-  return (100 - ((analogReading / 1023) * 100));
+  return (100.0 - ((analogReading / 1023.0) * 100.0));
 }
 

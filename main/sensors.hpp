@@ -21,4 +21,10 @@ class Sensors {
   // Soil Sensor Readings
   float readSoilSensor();
 
-}
+  // DHT Sensor Readings
+  void readDHTSensor();
+
+  // UV Sensor Readings
+  void readUVSensor();
+
+};

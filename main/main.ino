@@ -7,8 +7,9 @@
   Date: 30/10/2023
 */
 
-#include "sensor.h"
+#include "sensors.hpp"
 
+Sensors sensors; // Instantiate Sensor Class
 
 void setup() {
   // initialize serial communication at 9600 bits per second:
@@ -16,14 +17,14 @@ void setup() {
   
   //set the resolution to 12 bits (0-1023)
   analogReadResolution(10);
-
-  
 }
 
 void loop() {
   float soilMoisturePercentage; 
   
-  soilMoisturePercentage = readSoilSensor();
+  soilMoisturePercentage = sensors.readSoilSensor();
+  sensors.readDHTSensor();
+  sensors.readUVSensor();
 
   // print out the values you read:
   Serial.printf("Soil Moisture Percentage= %f\n", soilMoisturePercentage);

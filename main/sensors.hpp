@@ -3,7 +3,7 @@
 
   Author: Zoren Dela Cruz
   Description: Grabs sensor readings from
-               LM393 and BME280 sensors
+               LM393 and DHT11 sensors
   Date: 31/10/2023
 */
 

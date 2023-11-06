@@ -1,4 +1,4 @@
-#include "EmailSender.hpp"
+#include "mail.hpp"
 
 EmailSender::EmailSender(const char* ssid, const char* password, const char* smtpHost, int smtpPort, const char* authorEmail, const char* authorPassword, const char* recipientEmail) {
     connectToWiFi(ssid, password);
@@ -25,7 +25,7 @@ void EmailSender::configureSMTPSession(const char* smtpHost, int smtpPort, const
     // Set other session config parameters here
 
     smtp.debug(1);
-    smtp.callback(smtpCallback);
+    smtp.callback(smtpStatusCallback);
 }
 
 void EmailSender::setupSMTPSession() {

@@ -19,7 +19,7 @@ class Sensors {
   ~Sensors();
 
   // Soil Sensor Readings
-  float readSoilSensor();
+  void readSoilSensor();
 
   // DHT Sensor Readings
   void readDHTSensor();

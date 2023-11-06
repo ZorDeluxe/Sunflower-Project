@@ -47,13 +47,18 @@ Sensors::~Sensors() {
 // ***************************************
 // Reads the soil moisture in percentage
 // ***************************************
-float Sensors::readSoilSensor() {
+void Sensors::readSoilSensor() {
   int analogReading;
   const int soilSensorPin = A0;
+  float soilMoisturePercentage; 
+
 
   // Calculate the soil readings
   analogReading = analogRead(soilSensorPin);
-  return (100.0 - ((analogReading / 1023.0) * 100.0));
+  soilMoisturePercentage = (100.0 - ((analogReading / 1023.0) * 100.0));
+
+  // print out the values you read:
+  Serial.printf("Soil Moisture Percentage= %f\n", soilMoisturePercentage);
 }
 
 // ***************************************

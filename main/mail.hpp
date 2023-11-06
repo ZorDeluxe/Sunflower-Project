@@ -8,9 +8,6 @@
 */
 #pragma once
 
-#ifndef EmailSender_hpp
-#define EmailSender_hpp
-
 #include <Arduino.h>
 #include <ESP_Mail_Client.h>
 
@@ -25,5 +22,3 @@ private:
     void configureSMTPSession(const char* smtpHost, int smtpPort, const char* authorEmail, const char* authorPassword);
     void setupSMTPSession();
 };
-
-#endif

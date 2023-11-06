@@ -8,8 +8,10 @@
 */
 
 #include "sensors.hpp"
+#include "mail.hpp"
 
 Sensors sensors; // Instantiate Sensor Class
+
 
 void setup() {
   // initialize serial communication at 9600 bits per second:
@@ -20,14 +22,10 @@ void setup() {
 }
 
 void loop() {
-  float soilMoisturePercentage; 
   
-  soilMoisturePercentage = sensors.readSoilSensor();
+  sensors.readSoilSensor();
   sensors.readDHTSensor();
   sensors.readUVSensor();
-
-  // print out the values you read:
-  Serial.printf("Soil Moisture Percentage= %f\n", soilMoisturePercentage);
   
   delay(500);  // delay in between reads for clear read from serial
 }
